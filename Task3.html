@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Task3</title>
+</head>
+<body>
+    <ul>
+        <li>
+            <label for="1st_input">1st Number: </label>
+            <input type="number" id="1st_input">
+        </li>
+        <br>
+        <li>
+            <label for="2nd_input">2nd Number: </label>
+            <input type="number" id="2nd_input">
+        </li>
+    </ul>
+    <div class="functions">
+        <button class="button" id="multiply">Multiply</button>
+        <button class="button" id="divide">Divide</button>
+    </div>
+    <br><br><br>
+    <h2>The Result is:</h2>
+    <h1 class="answer">0</h1>
+
+    <script>
+        let mulButton = document.getElementById('multiply');
+        mulButton.onclick = function() {
+            let n1 = parseFloat(document.getElementById("1st_input").value);
+            let n2 = parseFloat(document.getElementById("2nd_input").value);
+            document.getElementsByClassName('answer')[0].textContent = n1 * n2;
+        }
+
+        let divButton = document.getElementById('divide');
+        divButton.onclick = function() {
+            let n1 = parseFloat(document.getElementById("1st_input").value);
+            let n2 = parseFloat(document.getElementById("2nd_input").value);
+            document.getElementsByClassName('answer')[0].textContent = n1 / n2;
+        }
+    </script>
+</body>
+</html>

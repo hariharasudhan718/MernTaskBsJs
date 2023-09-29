@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Task5</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            padding:1rem;
+        }
+        label{
+            padding-right: 1rem;
+        }
+        button{
+            padding: 1rem;
+        }
+        .req{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <label for="name">Name:</label>
+            <input type="text" required id="name">
+            <p class="req"></p>
+        </li>
+        <li>
+            <label for="email">Email:</label>
+            <input type="email" required id="email">
+            <p class="req"></p>
+        </li>
+        <li>
+            <label for="website">Website:</label>
+            <input type="text" required id="website">
+            <p class="req"></p>
+        </li>
+        <li>
+            <label for="message">Message:</label>
+            <textarea required name="message" id="message" cols="30" rows="10"></textarea>
+            <p class="req"></p>
+        </li>
+        <li>
+            <button type="submit" id="submit">Submit</button>
+        </li>
+    </ul>
+
+    <script>
+        let submitButton = document.getElementById('submit');
+        let name = document.getElementById('name');
+        let email = document.getElementById('email');
+        let website = document.getElementById('website');
+        submitButton.onclick = () =>{
+            if((name.value).length==0){
+                document.getElementsByClassName('req')[0].textContent = "This field is required";
+                name.style.borderColor = "red";
+            }
+            if((email.value).length==0){
+                document.getElementsByClassName('req')[1].textContent = "This field is required";
+                email.style.borderColor = "red";
+            }
+            if((website.value).length==0){
+                document.getElementsByClassName('req')[2].textContent = "This field is required";
+                website.style.borderColor = "red";
+            }
+            if((message.value).length==0){
+                document.getElementsByClassName('req')[3].textContent = "This field is required";
+                message.style.borderColor = "red";
+            }
+        }
+
+    </script>
+</body>
+</html>

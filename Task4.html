@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Task4</title>
+</head>
+<body>
+    <button class="date">Show Date</button>
+    <h2 class="dateText"></h2>
+    <br><br>
+    <button class="time">Show Time</button>
+    <h2 class="timeText"></h2>
+
+    <script>
+        let dateButton = document.getElementsByClassName('date')[0];
+        let timeButton = document.getElementsByClassName('time')[0];
+        dateButton.onclick = function(){
+            let dateAns = document.getElementsByClassName('dateText')[0];
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            let mm = today.getMonth() + 1; // Months start at 0!
+            let dd = today.getDate();
+
+            if (dd < 10) dd = '0' + dd;
+            if (mm < 10) mm = '0' + mm;
+
+            const formattedToday = dd + '/' + mm + '/' + yyyy;
+            dateAns.textContent = formattedToday;
+        }
+        timeButton.onclick = function(){
+            let timeAns = document.getElementsByClassName('timeText')[0];
+            timeAns.textContent = Date();
+        }
+
+    </script>
+</body>
+</html>
